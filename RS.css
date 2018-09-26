@@ -1,11 +1,7 @@
-body { background-color: #FCF75E; }
-#user-info, #message, { background-color: white; }
-textarea { height: auto; }
+/* used css/styles.css instead ; this is just for reference*/
 
-
-/*Start style rules for Recognitions Sent Page and Recognitions Received Page */
 nav{
-  /*Value can change later*/
+  /*Values can change later*/
   padding: 20px;
 }
 
@@ -13,16 +9,22 @@ a {
   color: black;
 }
 
-.flex-container {
+body {
+  background-color: #FCF75E;/*convert to hex*/ /*move color to the border color or inside*/
   display: flex;
   flex-direction: column;
   height: 100vh;
+
+}
+
+.flex-container {
   flex: 1 0 auto;
 }
 
 .flex-grow {
   flex: 1;
 }
+
 
 .userImage, .userName, .time {
   display: inline;
@@ -58,5 +60,3 @@ a {
   background-color: white;
   padding: 20px;
 }
-
-/* End of style rules for Recognitions Sent Page and Recognitions Received Page*/
