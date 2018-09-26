@@ -14,62 +14,61 @@
         <nav></nav>
       </header>
       <div class="row justify-content-around mx-2 mt-5">
-        <div id="user-info" class="col-12 col-sm-8 rounded-top border border-top-3 border-dark border-left-3 border-right-3 border-bottom-0 p-4">
-          <div class="row">
-            <div class="col-12">
-              <h1>User Information</h1>
+        <div id="user-profile-main" class="col-12 col-sm-8 rounded-top border border-top-3 border-dark border-left-3 border-right-3 border-bottom-0 p-4">
+          <div id="user-info">
+            <div class="row">
+              <div class="col-12">
+                <h1>User Information</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 col-sm-3 col-md-2">
+                <!-- avatar -->
+                <img src="http://www.shades.org/assets/img/portrait_placeholder.jpg" class="rounded" width="100%">
+              </div>
+              <div class="col-8 col-sm-9 col-md-10">
+                <!-- username -->
+                <p><strong>Username</strong></p>
+                <!-- bees available -->
+                <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvW-YT_aJP72A2s9TXDyPDFs4Drz9LPQFrai1rZzju9K8dqE5z" width="30"> to give <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Number of bees available to distribute"><span class="badge badge-pill badge-primary">5</span></span></p>
+                <!-- bees received -->
+                <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvW-YT_aJP72A2s9TXDyPDFs4Drz9LPQFrai1rZzju9K8dqE5z" width="30"> received <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Number of bees received"><span class="badge badge-pill badge-success">25</span></p>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-4 col-sm-3 col-md-2">
-              <!-- avatar -->
-              <img src="http://www.shades.org/assets/img/portrait_placeholder.jpg" class="rounded" width="100%">
+          <div id="message">
+            <div class="row">
+              <div class="col-12">
+                <h1>Send Recognition</h1>
+              </div>
             </div>
-            <div class="col-8 col-sm-9 col-md-10">
-              <!-- username -->
-              <p><strong>Username</strong></p>
-              <!-- bees available -->
-              <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvW-YT_aJP72A2s9TXDyPDFs4Drz9LPQFrai1rZzju9K8dqE5z" width="30"> to give <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Number of bees available to distribute">
-  <span class="badge badge-pill badge-primary">5</span></span></p>
-              <!-- bees received -->
-              <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvW-YT_aJP72A2s9TXDyPDFs4Drz9LPQFrai1rZzju9K8dqE5z" width="30"> received <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Number of bees received"><span class="badge badge-pill badge-success">25</span></p>
+            <!-- success/fail message -->
+            <div class="none">
+              <p class="alert alert-success" role="alert">Thank you. Your recognition was sent.</p>
+              <p class="alert alert-danger" role="alert">There was a problem sending your recognition. Please try again later.</p>
             </div>
+            <!-- recognition form -->
+            <form action="" method="">
+              <div class="form-group input-group-lg">
+                <label for="username">Select User to Recognize</label><br>
+                <input type="text" list="usernamelist" class="form-control rounded border border-secondary" placeholder="Username">
+                  <datalist id="usernamelist">
+                    <option label="Ashley" value="Ashley" />
+                    <option label="Egor" value="Egor" />
+                    <option label="Erik" value="Erik" />
+                    <option label="Jason" value="Jason" />
+                    <option label="Merry" value="Merry" />
+                  </datalist>
+              </div>
+              <div class="form-group input-group-lg">
+                <label for="message">Message</label><br>
+                <textarea id="textarea" name="message" placeholder="Include a message here" class="form-control border border-secondary" rows="3"></textarea>
+              </div>
+              <div class="form-group float-right">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
           </div>
-        </div>
-      </div>
-      <div class="row justify-content-around mx-2">
-        <div id="message" class="col-12 col-sm-8 border border-top-0 border-bottom-0 border-dark border-left-3 border-right-3 p-4">
-          <div class="row">
-            <div class="col-12">
-              <h1>Send Recognition</h1>
-            </div>
-          </div>
-          <!-- success/fail message -->
-          <div class="none">
-            <p class="alert alert-success" role="alert">Thank you. Your recognition was sent.</p>
-            <p class="alert alert-danger" role="alert">There was a problem sending your recognition. Please try again later.</p>
-          </div>
-          <!-- recognition form -->
-          <form action="" method="">
-            <div class="form-group input-group-lg">
-              <label for="username">Select User to Recognize</label><br>
-              <input type="text" list="usernamelist" class="form-control rounded border border-secondary" placeholder="Username">
-                <datalist id="usernamelist">
-                  <option label="Ashley" value="Ashley" />
-                  <option label="Egor" value="Egor" />
-                  <option label="Erik" value="Erik" />
-                  <option label="Jason" value="Jason" />
-                  <option label="Merry" value="Merry" />
-                </datalist>
-            </div>
-            <div class="form-group input-group-lg">
-              <label for="message">Message</label><br>
-              <textarea id="textarea" name="message" placeholder="Include a message here" class="form-control border border-secondary" rows="3"></textarea>
-            </div>
-            <div class="form-group float-right">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
         </div>
       </div>
 
