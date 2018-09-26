@@ -3,15 +3,89 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/master.css">
-    <title></title>
+    <title>User Profile Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+
+    </style>
   </head>
-  <body>
-    <header>
-      <nav></nav>
-    </header>
-    <div class="info"></div>
-    <div class="message"></div>
+  <body style="background-color: #FCF75E;">
+    <div class="container-fluid rounded">
+      <header>
+        <nav></nav>
+      </header>
+      <div class="row justify-content-around mx-2 mt-5">
+        <div id="user-info" class="col-12 col-sm-8 rounded-top border border-top-3 border-dark border-left-3 border-right-3 border-bottom-0 p-4" style="background-color: white;">
+          <div class="row">
+            <div class="col-12">
+              <h1>User Information</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 col-sm-3 col-md-2">
+              <!-- avatar -->
+              <img src="https://via.placeholder.com/50x50" class="rounded" width="100%">
+            </div>
+            <div class="col-7">
+              <!-- username -->
+              <p>Username</p>
+              <!-- bees available -->
+              <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvW-YT_aJP72A2s9TXDyPDFs4Drz9LPQFrai1rZzju9K8dqE5z" width="30"> to give = X</p>
+              <!-- bees received -->
+              <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvW-YT_aJP72A2s9TXDyPDFs4Drz9LPQFrai1rZzju9K8dqE5z" width="30"> received = Y</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-around mx-2">
+        <div id="message" class="col-12 col-sm-8 border border-top-0 border-bottom-0 border-dark border-left-3 border-right-3 p-4" style="background-color: white;">
+          <div class="row">
+            <div class="col-12">
+              <h1>Send Recognition</h1>
+            </div>
+          </div>
+          <!-- success/fail message -->
+          <div class="none">
+            <p class="bg-success text-light rounded p-2">Thank you. Your recognition was sent.</p>
+            <p class="bg-danger text-light rounded p-2">There was a problem sending your recognition. Please try again later.</p>
+          </div>
+          <!-- recognition form -->
+          <form action="" method="">
+            <div class="form-group input-group-lg">
+              <label for="username">Select User to Recognize</label><br>
+              <input type="text" list="usernamelist" class="form-control rounded border border-secondary" placeholder="Username">
+                <datalist id="usernamelist">
+                  <option label="Ashley" value="Ashley" />
+                  <option label="Egor" value="Egor" />
+                  <option label="Erik" value="Erik" />
+                  <option label="Jason" value="Jason" />
+                  <option label="Merry" value="Merry" />
+                </datalist>
+            </div>
+            <div class="form-group input-group-lg">
+              <label for="message">Message</label><br>
+              <textarea name="message" placeholder="Include a message here" class="form-control border border-secondary" rows="3" style="height: auto;"></textarea>
+            </div>
+            <div class="form-group float-right">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
     <div class="sidebar"></div>
-    <footer></footer>
+      <footer>
+        <div class="row justify-content-around mx-2">
+          <div class="col-12 col-sm-8 rounded-bottom border border-top-0 border-bottom-3 border-dark border-left-3 border-right-3 p-4 mb-5" style="background-color:white;">
+
+            <p class="text-center">BeeRecognized &copy;2018</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
