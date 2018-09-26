@@ -1,1 +1,30 @@
 TeamBee's Capstone project
+
+
+BeeRecognized Styling Convention: 
+
+L: login 
+UP: user profile page 
+RS: recognition sent page
+RR: recognition received page
+
+HTML
+    <div class=”info-user”>
+    <div id=”info-name”>
+
+    <div class=”info-user”> 
+                <p>This is an example of where to place the starting tags and ending tags.
+                </p>
+    </div>
+
+
+
+CSS *Use Bootstrap Framework 
+    Bootstrap version: 4.0
+    Color values: Hex values 
+    Color for website: #FCF75E 
+
+ 
+
+
+JS
