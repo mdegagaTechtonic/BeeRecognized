@@ -1,6 +1,6 @@
 body { background-color: #FCF75E; }
-#user-info, #message, { background-color: white; }
-textarea { height: auto; }
+#user-info, #message, #footer { background-color: white; }
+#textarea { height: auto; }
 
 
 /*Start style rules for Recognitions Sent Page and Recognitions Received Page */
