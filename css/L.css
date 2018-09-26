@@ -1,0 +1,59 @@
+body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXGdyTa89bD68XLYKFiuIjMnpKmR-e3ZHHausXQwPVIYXr5R9r");
+
+}
+
+.container-fluid {
+  width: 300px;
+  height: 500px;
+  overflow: visible;
+  margin-top: 100px;
+}
+
+ #title{
+  width: 200px;
+  height: 100px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: fantasy;
+  color: #84961e;
+ }
+
+#sign-in{
+  width: 50px;
+  height: 50px;
+ }
+
+#link{
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+.container-fluid{
+  width: 300px;
+  height: 500px;
+  overflow: auto;
+  margin-top: 100px;
+}
+
+ #title{
+   width: 200px;
+   height: 100px;
+   margin-bottom: 20px;
+  font-size: 30px;
+  font-family: fantasy;
+  color: #84961e;
+ }
+
+#sign-in{
+   width: 50px;
+   height: 50px;
+ }
+
+#link{
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+}
