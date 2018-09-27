@@ -59,4 +59,8 @@ a {
   padding: 20px;
 }
 
+.navbar-fixed-right {
+  background-color: white;
+}
+
 /* End of style rules for Recognitions Sent Page and Recognitions Received Page*/
