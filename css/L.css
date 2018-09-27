@@ -37,24 +37,13 @@ body {
   font-size: 13px;
   text-align: center;
 }
-span{
-  color: black;
-  font-size: 12px;
-}
-#footer{
-  text-align: center;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  background-color: blue;
-}
+
 #button{
   width: 175px;
   height: 40px;
   background-image: url(http://platform.slack-edge.com/img/sign_in_with_slack.png);
    background-color: transparent;
    background-position: 0px 0px;
-  border-radius: 4px;
-  display: inline-block;
+  border-radius: 10px;
   margin-bottom: 20px;
-
 }
