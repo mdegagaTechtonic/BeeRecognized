@@ -1,5 +1,5 @@
 body { background-color: #FCF75E; }
-#user-profile-main { border-right: thin solid #eee; }
+#user-profile-main, #footer { background-color: white; }
 textarea { height: auto !important; }
 
 
