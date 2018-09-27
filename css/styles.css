@@ -1,6 +1,6 @@
 body { background-color: #FCF75E; }
-#user-profile-main, #footer { background-color: white; }
-#textarea { height: auto; }
+#user-profile-main { border-right: thin solid #eee; }
+textarea { height: auto !important; }
 
 
 /*Start style rules for Recognitions Sent Page and Recognitions Received Page */
