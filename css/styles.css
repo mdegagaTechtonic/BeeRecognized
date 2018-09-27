@@ -2,6 +2,11 @@ body { background-color: #FCF75E; }
 #user-profile-main, #sidebar { background-color: white; }
 textarea { height: auto !important; }
 
+/* Multiples pages */
+
+.bg-white {
+  background-color: #FFFFFF !important;
+}
 
 /*Start style rules for Recognitions Sent Page and Recognitions Received Page */
 nav{
@@ -63,4 +68,7 @@ a {
   background-color: white;
 }
 
+#date.text-muted {
+  text-align: right;
+}
 /* End of style rules for Recognitions Sent Page and Recognitions Received Page*/
