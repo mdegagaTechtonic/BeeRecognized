@@ -7,6 +7,7 @@ body {
   height: 500px;
   overflow: auto;
   margin-top: 100px;
+  margin-left: 560px;
 }
 
 #column{
@@ -35,4 +36,25 @@ body {
   font-style: italic;
   font-size: 13px;
   text-align: center;
+}
+span{
+  color: black;
+  font-size: 12px;
+}
+#footer{
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  background-color: blue;
+}
+#button{
+  width: 175px;
+  height: 40px;
+  background-image: url(http://platform.slack-edge.com/img/sign_in_with_slack.png);
+   background-color: transparent;
+   background-position: 0px 0px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 20px;
+
 }
