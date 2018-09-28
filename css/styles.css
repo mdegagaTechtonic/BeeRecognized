@@ -67,8 +67,8 @@ a {
 .navbar-fixed-right {
   background-color: white;
 }
-
-#date.text-muted {
-  text-align: right;
+div.item {
+display: inline-block;
 }
+
 /* End of style rules for Recognitions Sent Page and Recognitions Received Page*/
