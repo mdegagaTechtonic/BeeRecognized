@@ -74,6 +74,10 @@ h1.heading {
   display: inline;
 }
 
+.flex-row {
+  padding-bottom: 1em;
+}
+
 /* End of style rules for Recognitions Sent Page and Recognitions Received Page*/
 /* From login page */
 h1 {
