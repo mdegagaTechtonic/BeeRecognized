@@ -3,17 +3,9 @@ body {
 }
 
 .container-fluid{
-  width: 400px;
-  height: 500px;
-  overflow: auto;
-  margin-top: 100px;
-  margin-left: 560px;
-}
-
-#column{
+  width: 300px;
   height: 300px;
-  font-size: 40px;
-  font-family: fantasy;
+  font-family: normal;
   border: 2px solid grey;
   border-radius: 5px;
   background-color: white;
@@ -21,29 +13,32 @@ body {
   padding-top: 20px;
 }
 
-#title{
-  width: 310px;
-  height: 300px;
+.img{
+  margin: 15px 20px 5px 20px;
 }
-
-.text1-center{
+#img{
+  margin-left: 70px;
+}
+p{
+  font-size: 30px;
   font-family: fantasy;
   color: black;
-  margin-right: 5px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #link{
-  font-style: italic;
+  font-style: normal;
   font-size: 13px;
   text-align: center;
+  margin-top: 0px;
+
 }
 
 #button{
   width: 175px;
   height: 40px;
   background-image: url(http://platform.slack-edge.com/img/sign_in_with_slack.png);
-   background-color: transparent;
-   background-position: 0px 0px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin: 20px 10px 20px 30px;
 }
