@@ -89,6 +89,9 @@ h1 {
 #footer {
   margin: 240px auto 0px;
 }
+.content{
+  margin-top: 0px;
+}
 
 #link {
   font-size: 13px;
