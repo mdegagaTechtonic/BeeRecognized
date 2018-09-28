@@ -26,7 +26,7 @@ RR: recognition received page
 
 ### CSS
     Use Bootstrap Framework
-    Bootstrap version: 4.0
+    Bootstrap version: 4.1.3
     Color values: Hex
     yellow color: #FCF75E
 
