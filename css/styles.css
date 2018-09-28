@@ -1,4 +1,4 @@
-body { background-color: #FCF75E; }
+body { background-color: #FCF75E; margin-top: 60px; }
 #user-profile-main, #sidebar { background-color: white; }
 textarea { height: auto !important; }
 
