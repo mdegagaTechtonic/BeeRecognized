@@ -8,7 +8,7 @@
     <link rel="icon" type="img/png" href="images/bee.png">
     <!-- need following 2 for calendar widget -->
     <link rel="stylesheet" href="jquery-ui.min.css">
-    <title>Recognition Sent Out</title><!-- actually include the current user's name-->
+    <title>Recognition Sent</title><!-- actually include the current user's name-->
   </head>
   <body class="flex-container">
     <header>
@@ -41,22 +41,26 @@
         <div class="row justify-content-around">
           <div class="col-12 col-md-11 mx-1 mt-5">
             <div class="in-white-box border border-dark rounded">
-              <div class="row">
-                <h1 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Username's Recognition Sent</h1>
-              </div>
+              <div class="d-flex flex-row">
+                <div class="align-self-center">
+                  <h1 class="heading p-2">Username's Recognition Sent</h1>
+                </div>
+                  <span class="badge badge-pill badge-dark align-self-center p-2 total" title="Total: 50">Total: 50</span>
+                  <img src="images/demoBee2.png" class="img-fluid align-self-center" alt="bee">
+                </div>
 
               <div class="d-flex flex-row flex-wrap">
         		  <!-- text input with drop down list -->
                   <div class="p-2">
-        	        <label Username="Username">Sent to</label>
+        	        <label username="Username">Sent to</label>
                     <input type="text" list="browsers" placeholder="co-worker"/>
                     <datalist id="browsers">
                       <!-- only one option element needed when ready to populate from database -->
-                      <option value="MerryD">
-                      <option value="erikhoy">
-                      <option value="Egor">
-                      <option value="Jason Dang">
-                      <option value="Shambre Sena-Wright">
+                      <option value="MerryD"></option>
+                      <option value="erikhoy"></option>
+                      <option value="Egor"></option>
+                      <option value="Jason Dang"></option>
+                      <option value="Shambre Sena-Wright"></option>
                     </datalist>
                   </div>
                   <!-- date picker with calendar -->
@@ -70,8 +74,6 @@
                     <button type="button" class="btn btn-info btn-sm">Filter</button>
                   </div>
               </div>
-
-
               <div class="archive">
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info">

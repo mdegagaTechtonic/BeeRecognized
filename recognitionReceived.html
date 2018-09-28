@@ -42,22 +42,25 @@
         <div class="row justify-content-around">
           <div class="col-12 col-md-11 mx-1 mt-5">
             <div class="in-white-box border border-dark rounded">
-              <div class="row">
-                <h1 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Username's Recognition Received</h1>
-              </div>
-
+              <div class="d-flex flex-row">
+                <div class="align-self-center">
+                  <h1 class="heading p-2">Username's Recognition Received</h1>
+                </div>
+                  <span class="badge badge-pill badge-success align-self-center p-2 total" title="Total: 25">Total: 25</span>
+                  <img src="images/demoBee2.png" class="img-fluid align-self-center" alt="bee">
+                </div>
               <div class="d-flex flex-row flex-wrap">
         		  <!-- text input with drop down list -->
                   <div class="p-2">
-        	        <label Username="Username">Received from</label>  <!-- change to 'Sent to' for recognitionSent.html -->
+        	        <label username="Username">Received from</label>  <!-- change to 'Sent to' for recognitionSent.html -->
                     <input type="text" list="browsers" placeholder="co-worker"/>
                     <datalist id="browsers">
                       <!-- only one option element needed when ready to populate from database -->
-                      <option value="MerryD">
-                      <option value="erikhoy">
-                      <option value="Egor">
-                      <option value="Jason Dang">
-                      <option value="Shambre Sena-Wright">
+                      <option value="MerryD"></option>
+                      <option value="erikhoy"></option>
+                      <option value="Egor"></option>
+                      <option value="Jason Dang"></option>
+                      <option value="Shambre Sena-Wright"></option>
                     </datalist>
                   </div>
                   <!-- date picker with calendar -->
@@ -127,7 +130,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
     <!-- need for calendar widget -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="jquery-ui.min.js"></script>

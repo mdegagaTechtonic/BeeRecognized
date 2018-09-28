@@ -61,19 +61,21 @@ div.item {
 display: inline-block;
 }
 
+
+.total {
+  margin-right: .5em;
+}
+
+.img-fluid {
+  width: 30px;
+}
+
+h1.heading {
+  display: inline;
+}
+
 /* End of style rules for Recognitions Sent Page and Recognitions Received Page*/
 /* From login page */
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  flex: 1 0 auto;
-}
-
-.flex-grow {
-  flex: 1;
-}
-
 h1 {
   margin: 0 auto;
   font-size:3vw;
