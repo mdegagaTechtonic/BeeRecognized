@@ -2,7 +2,7 @@ $(document).ready(function(init){
   // defaultLoadPageRS();
   // defaultLoadPageRR();
   // defaultLoginPage();
-  // getUserInfo();
+  displayUserInfo();
   // getUserNames();
   // updateBeesToGive();
   // getBees();
@@ -45,3 +45,15 @@ function getRecentRecognition(recognitionArray){
     displayList(recognitionArray);
   }
 };
+
+//user information
+var oPerson = JSON.parse(sessionStorage.getItem("currUser"));
+
+function displayUserInfo() {
+  $("#username").html(oPerson.username);
+  $("#beesToGive").html(oPerson.beesToGive);
+}
+//called within getBees 
+function displayBees(){
+
+}
