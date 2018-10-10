@@ -53,7 +53,29 @@ function displayUserInfo() {
   $("#username").html(oPerson.username);
   $("#beesToGive").html(oPerson.beesToGive);
 }
-//called within getBees 
-function displayBees(){
 
+//called within submit button event
+function displayBees(arr){
+
+}
+
+//call within the click submit button event
+$("#submit-button").on("click", function(event) {
+  displayAlert(event);
+});
+
+function displayAlert(event) {
+  event.preventDefault();
+  //Successfully sent message
+  // $("div#alert").append("<p></p>").attr("id", "success");
+  // $("#success").addClass("alert alert-success");
+  // $("#success").attr("role", "alert");
+  // $("#success").html("Thank you. Your recognition was sent.");
+
+
+  //Error in sending message
+  $("div#alert").append("<p></p>").attr("id", "danger");
+  $("#danger").addClass("alert alert-danger");
+  $("#danger").attr("role", "alert");
+  $("#danger").html("There was a problem sending your recognition. Please try again later");
 }
