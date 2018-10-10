@@ -36,15 +36,12 @@ function getRecentRecognition(recognitionArray){
   var count = 0;
   for(var i = 0; i < recognitionArray.length; i++){
     count++;
-    console.log(count);
   }
   if (count > 5) {
     var recentFive = recognitionArray.slice(0,5);
     displayList(recentFive);
-    console.log(recentFive);
   }
   if (count <= 5) {
     displayList(recognitionArray);
-    console.log(recognitionArray);
   }
 };

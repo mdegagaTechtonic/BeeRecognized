@@ -16,5 +16,5 @@ function displayList(arr) {
 }
 $(document).ready(function() {
   // co nsole.log('ready');
-  getList();
+  // getList();
 });
