@@ -1,7 +1,7 @@
 //will use web storage to store for a session - until tab is closed
 if (typeof(Storage) !== "undefined") {
   //testsample slack databse --- these indviduals have a slack account and are in our company but have yet to use the BeeRecognized app
-  var sampleSlackUsers = [{username:"Merry D", avatar:"images/demoUser1.png"}, {username:"Shambre SW", avatar:"images/demoUser2.png"}, {username:"Kyle B", avatar:"images/demoUser3.png"}, {username:"Brett G", avatar:"images/demoUser1.png"}, {username:"Jason D", avatar:"images/demoUser1.png"},{username:"Ashley E", avatar:"images/demoUser2.png"},{username:"Erik H", avatar:"images/demoUser3.png"},{username:"Yahor N", avatar:"images/demoUser3.png"}, {username:"Apple", avatar:"images/demoUser3.png"}];
+  var sampleSlackUsers = [{username:"Merry D", avatar:"images/avatars/MerryD.png"}, {username:"Shambre SW", avatar:"images/avatars/ShambreSW.png"}, {username:"Kyle B", avatar:"images/avatars/kyle.brothis.png"}, {username:"Brett G", avatar:"images/avatars/BrettGoers.png"}, {username:"Jason Dang", avatar:"images/avatars/JasonDang.png"},{username:"Ashley E", avatar:"images/avatars/ashley.elder.png"},{username:"Erik H", avatar:"images/avatars/erikhoy.png.png"},{username:"Yahor N", avatar:"images/avatars/Egor.png.png"}, {username:"Cake", avatar:"MerryD.png"}];
 
   //test data until we can connect to our own db
   //contains Recognition objects
@@ -17,9 +17,9 @@ if (typeof(Storage) !== "undefined") {
   //
   //   //authenticate username using slack API - phase 3. for check if they are in the mock slack db
   //   //test with name that is in the sampleUsers
-    //var samplePerson = "Jason D";
+    // var samplePerson = "Jason Dang";
   //   //test with name not in the sampleUsers but has a slack account
-     var samplePerson = "Apple"
+  var samplePerson = "Cake"
   //   //test someone with no slack account
   //   //var samplePerson = "Pierre L";
   //   //console.log(sampleUsers);
@@ -65,10 +65,11 @@ if (typeof(Storage) !== "undefined") {
       var oPerson = createPersonObj(person);
       sampleUsers.push(oPerson);
       index[1] = sampleUsers.length-1;
+      //console.log(sampleUsers);
       localStore(sampleUsers);
     }
     //once added in successfully or was already in db, store in session so that person's info can be displayed in user profile page and go to the userProfile page
-    getCurrUser(sampleUsers[index[1]]);
+    setCurrUser(sampleUsers[index[1]]);
     console.log(sampleUsers);
     goToUserProfilePage();
   };
@@ -86,7 +87,7 @@ if (typeof(Storage) !== "undefined") {
     }
   }
 
-  function getCurrUser(person) {
+  function setCurrUser(person) {
     var strPerson = JSON.stringify(person);
     // console.log(person);
     // console.log(strPerson);
@@ -95,6 +96,7 @@ if (typeof(Storage) !== "undefined") {
 
   function localStore(arr) {
     var db = JSON.stringify(arr);
+    //console.log("storing db")
     //console.log(db)
     localStorage.setItem("db",db);
 
