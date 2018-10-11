@@ -21,7 +21,7 @@ function getRecentRecognition(recognitionArray){
   }
   if (count > 5) {
     var recentFive = recognitionArray.slice(0,5);
-    displayList(recentFive);
+    displayList(recentFive, "SB");
   }
   if (count <= 5) {
     displayList(recognitionArray);
