@@ -1,11 +1,11 @@
-$("form").submit(function(event) {
-  getBees(event);
-  updateForm();
-  var msgArr = ($(this).serializeArray());
-  updateDB(msgArr);
-  $(this).find("input[type=text],textarea").val("");
-  //event.preventDefault();
-});
+// $("form").submit(function(event) {
+//   getBees(event);
+//   updateForm();
+//   var msgArr = ($(this).serializeArray());
+//   updateDB(msgArr);
+//   $(this).find("input[type=text],textarea").val("");
+//   //event.preventDefault();
+// });
 
 function updateForm() {
   //console.log(oPerson.beesToGive);

@@ -53,4 +53,9 @@ r21 = new Recognition("avatars/Egor.png", "avatars/BrettGoers.png", "Egor", "Bre
 
 r22 = new Recognition("avatars/MerryD.png", "avatars/ashley.elder.png", "MerryD", "ashley.elder", 3, "4 days ago", "Remember there’s no such thing as a small act of kindness. Every act creates a ripple with no logical end.")
 
-recognition = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22];
+
+$(init)
+function init() {
+  recognition = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22];
+  localStorage.setItem("db", JSON.stringify(recognition));
+}
