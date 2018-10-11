@@ -53,4 +53,5 @@ function getAllRecognitionSent(recognitionSent){
   $(".total").attr("title","Total: " + numberSent);
   $(".total").append(beeCount);
   displayList(recognitionSent);
+  return recognitionSent;
 };
