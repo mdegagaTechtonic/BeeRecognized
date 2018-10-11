@@ -2,14 +2,16 @@ $(document).ready(function(init){
   // defaultUserProfilePage();
   // defaultLoadPageRS();
   // defaultLoginPage();
-  getAllRecognitionReceived(recognitionReceived);
+  getAllRecognitionReceived();
   displayList();
+  updateBeesReceived()
   // logout();
 });
 
-function Recognition(avatar, sender, receiver, beesToGive, date, message)
+function Recognition(avatarSender, avatarReceiver, sender, receiver, beesToGive, date, message)
 {
-  this.avatar = avatar;
+  this.avatarSender = avatarSender;
+  this.avatarReceiver = avatarReceiver;
   this.sender = sender;
   this.receiver = receiver;
   this.updateBeesToGive = beesToGive;
@@ -17,19 +19,27 @@ function Recognition(avatar, sender, receiver, beesToGive, date, message)
   this.message = message;
 };
 
-recognition1 = new Recognition("demoUser2.png", "Ashley E", "Merry D", 10, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition2 = new Recognition("demoUser2.png", "Ashley E", "Merry D", 10, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition3 = new Recognition("demoUser2.png", "Ashley E", "Merry D", 10, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition4 = new Recognition("demoUser2.png", "Ashley E", "Merry D", 10, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition5 = new Recognition("demoUser2.png", "Ashley E", "Merry D", 10, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
+function getAllRecognitionReceived(){
+  // localStorage = localStorage.getItem("db");//mock db call
+  username = getName();
+  receivedRecognition = [];
+  for (var i = 0; i < recognition.length; i++) {
+    if (recognition[i].receiver.toLowerCase() === username.toLowerCase()) {//when localstorage works replace var recognition with var localstorage
+      receivedRecognition.push(recognition[i]);
+    }
+  }
+  displayList(receivedRecognition);
+  return receivedRecognition;
+};
 
-var recognitionReceived = [recognition1, recognition2, recognition3, recognition4, recognition5];
-
-function getAllRecognitionReceived(recognitionReceived){
-  var numberReceived = recognitionReceived.length;
+function updateBeesReceived(){
+  var numberReceived = getAllRecognitionReceived().length;
   beeCount = "Total: " + numberReceived;
   $(".total").attr("title","Total: " + numberReceived);
   $(".total").append(beeCount);
-  displayList(recognitionReceived);
-  return recognitionReceived;
+};
+
+function getName(event){
+  var username = $('span.username').text().slice(0, -2);//remove 's from username
+  return username;
 };
