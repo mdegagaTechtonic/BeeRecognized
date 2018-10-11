@@ -2,9 +2,10 @@ $(document).ready(function(init){
   // defaultUserProfilePage();
   // defaultLoadPageRR();
   // defaultLoginPage();
-  displayUserInfo();
+  // displayUserInfo();
   // getDateRange();
   getAllRecognitionSent();
+  updateBeesSent();
   // displayList(arr);
 });
 
@@ -17,12 +18,27 @@ $(document).ready(function(init){
 //
 // }
 
+function getName(event){
+  var username = $('span.username').text().slice(0, -2);//remove 's from username
+  return username;
+};
+
 function getAllRecognitionSent(){
-  var numberSent = JSON.parse(localStorage.getItem("db"));
-  var count = numberSent.length;
+  // localStorage = localStorage.getItem("db");//mock db call
+  username = getName();
+  sentRecognition = [];
+  for (var i = 0; i < recognition.length; i++) {
+    if (recognition[i].sender.toLowerCase() === username.toLowerCase()) {//when localstorage works replace var recognition with var localstorage
+      sentRecognition.push(recognition[i]);
+    }
+  }
+  displayList(sentRecognition, "RS");
+  return sentRecognition;
+};
+
+function updateBeesSent(){
+  var numberSent = getAllRecognitionSent().length;
   beeCount = "Total: " + numberSent;
   $(".total").attr("title","Total: " + numberSent);
   $(".total").append(beeCount);
-  displayList(numberSent, "RS");
-  return recognition;
 };
