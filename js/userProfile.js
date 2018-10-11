@@ -50,10 +50,10 @@ function getRecentRecognition(recognitionArray){
 };
 
 //user information
-var oPerson = JSON.parse(sessionStorage.getItem("currUser"));
+var oPerson = JSON.parse(localStorage.getItem("currUser"));
 
 function displayUserInfo() {
-  $("#username").html(oPerson.username);
+  $("#username").html(oPerson.sender);
   $("#beesToGive").html(oPerson.beesToGive);
 }
 
@@ -66,30 +66,34 @@ function displayBees(arr){
 
 function getBees(){
       $("#submit-button").on("click", function(event){
+        makeInvisible(event);
         if(oPerson.beesToGive>0){
               var value  = oPerson.beesToGive-1;
               $("#beesToGive").html(value);
               event.preventDefault();
               oPerson.beesToGive=value;
+              displaySuccess(event);
           }else{
-              alert("Please, you need to ");
+              //alert("Please, you need to ");
+              displayFailure(event);
           }
       });
 }
 
-
-function displayAlert(event) {
+function displaySuccess(event) {
   event.preventDefault();
-  //Successfully sent message
-  // $("div#alert").append("<p></p>").attr("id", "success");
-  // $("#success").addClass("alert alert-success");
-  // $("#success").attr("role", "alert");
-  // $("#success").html("Thank you. Your recognition was sent.");
+  $("#success").removeClass("invisible");
+}
 
+function displayFailure(event) {
+  event.preventDefault();
+  $("#danger").removeClass("invisible");
+  //oPerson.beesToGive=10;
+}
 
-  //Error in sending message
-  $("div#alert").append("<p></p>").attr("id", "danger");
-  $("#danger").addClass("alert alert-danger");
-  $("#danger").attr("role", "alert");
-  $("#danger").html("There was a problem sending your recognition. Please try again later");
+function makeInvisible(event) {
+  event.preventDefault();
+  $("#danger").addClass("invisible");
+  $("#success").addClass("invisible");
+
 }
