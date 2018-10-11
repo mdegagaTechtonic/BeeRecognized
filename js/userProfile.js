@@ -12,6 +12,8 @@ $(document).ready(function(init){
   // updateForm();
 });
 
+var recognitionArray = JSON.parse(localStorage.getItem("db"));
+
 function getRecentRecognition(recognitionArray){
   var count = 0;
   for(var i = 0; i < recognitionArray.length; i++){
@@ -32,7 +34,7 @@ var oPerson = JSON.parse(localStorage.getItem("currUser"));
 function displayUserInfo() {
   $("#username").html(oPerson.sender);
   $("#beesToGive").html(oPerson.beesToGive);
-  $("#avatar").attr("src", oPerson.avatar);
+  $("#avatar").attr("src", oPerson.avatarSender);
   getTotalBeesReceived();
 }
 
@@ -44,7 +46,7 @@ function getTotalBeesReceived(){
 
 //call within the click submit button event
 $("form").submit(function(event) {
-  getBees();
+  getBees(event);
   updateForm();
   var msgArr = ($(this).serializeArray());
   updateDB(msgArr);
@@ -53,33 +55,33 @@ $("form").submit(function(event) {
 });
 
 
-function getBees(){
+function getBees(event){
         if(oPerson.beesToGive>0){
               var value  = oPerson.beesToGive-1;
               $("#beesToGive").html(value);
-              // event.preventDefault();
+              //event.preventDefault();
               oPerson.beesToGive=value;
               localStorage.setItem("currUser",JSON.stringify(oPerson))
-              displaySuccess(event);
+              displaySuccess();
           }else{
-              displayFailure(event);
+              displayFailure();
           }
            setTimeout(function(){ makeInvisible(event); }, 3000)
 }
 
-function displaySuccess(event) {
-  event.preventDefault();
+function displaySuccess() {
+  //event.preventDefault();
   $("#success").removeClass("invisible");
 }
 
-function displayFailure(event) {
-  event.preventDefault();
+function displayFailure() {
+  //event.preventDefault();
   $("#danger").removeClass("invisible");
   //oPerson.beesToGive=10;
 }
 
-function makeInvisible(event) {
-  event.preventDefault();
+function makeInvisible() {
+  //event.preventDefault();
   $("#danger").addClass("invisible");
   $("#success").addClass("invisible");
 
