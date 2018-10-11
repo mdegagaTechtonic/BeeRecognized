@@ -5,7 +5,7 @@ $(document).ready(function(init){
   displayUserInfo();
   // getUserNames();
   // updateBeesToGive();
-  // getBees();
+  getBees();
   // createRecognition();
   getRecentRecognition(recognitionArray);
   // displayList();
@@ -60,9 +60,20 @@ function displayBees(arr){
 }
 
 //call within the click submit button event
-$("#submit-button").on("click", function(event) {
-  displayAlert(event);
-});
+
+function getBees(){
+      $("#submit-button").on("click", function(event){
+        if(oPerson.beesToGive>0){
+              var value  = oPerson.beesToGive-1;
+              $("#beesToGive").html(value);
+              event.preventDefault();
+              oPerson.beesToGive=value;
+          }else{
+              alert("Please, you need to ");
+          }
+      });
+}
+
 
 function displayAlert(event) {
   event.preventDefault();
