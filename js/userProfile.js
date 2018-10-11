@@ -12,29 +12,7 @@ $(document).ready(function(init){
   // updateForm();
 });
 
-function Recognition(avatar, sender, receiver, beesToGive, date, message)
-{
-  this.avatar = avatar;
-  this.sender = sender;
-  this.receiver = receiver;
-  this.updateBeesToGive = beesToGive;
-  this.date = date;
-  this.message = message;
-};
-
-recognition1 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition2 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition3 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition4 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition5 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition6 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition7 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition8 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition9 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition10 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-recognition11 = new Recognition("demoUser1.png", "Shambre SW", "Erik H", 5, "1 day ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
-
-var recognitionArray = [recognition1, recognition2, recognition3, recognition4, recognition5, recognition6, recognition7, recognition8, recognition9, recognition10, recognition11];
+var recognitionArray = JSON.parse(localStorage.getItem("db"));
 
 function getRecentRecognition(recognitionArray){
   var count = 0;
@@ -43,7 +21,7 @@ function getRecentRecognition(recognitionArray){
   }
   if (count > 5) {
     var recentFive = recognitionArray.slice(0,5);
-    displayList(recentFive);
+    displayList(recentFive, "SB");
   }
   if (count <= 5) {
     displayList(recognitionArray);
@@ -56,7 +34,7 @@ var oPerson = JSON.parse(localStorage.getItem("currUser"));
 function displayUserInfo() {
   $("#username").html(oPerson.sender);
   $("#beesToGive").html(oPerson.beesToGive);
-  $("#avatar").attr("src", oPerson.avatar);
+  $("#avatar").attr("src", oPerson.avatarSender);
   getTotalBeesReceived();
 }
 
@@ -68,7 +46,7 @@ function getTotalBeesReceived(){
 
 //call within the click submit button event
 $("form").submit(function(event) {
-  getBees();
+  getBees(event);
   updateForm();
   var msgArr = ($(this).serializeArray());
   updateDB(msgArr);
@@ -77,33 +55,33 @@ $("form").submit(function(event) {
 });
 
 
-function getBees(){
+function getBees(event){
         if(oPerson.beesToGive>0){
               var value  = oPerson.beesToGive-1;
               $("#beesToGive").html(value);
-              // event.preventDefault();
+              //event.preventDefault();
               oPerson.beesToGive=value;
               localStorage.setItem("currUser",JSON.stringify(oPerson))
-              displaySuccess(event);
+              displaySuccess();
           }else{
-              displayFailure(event);
+              displayFailure();
           }
            setTimeout(function(){ makeInvisible(event); }, 3000)
 }
 
-function displaySuccess(event) {
-  event.preventDefault();
+function displaySuccess() {
+  //event.preventDefault();
   $("#success").removeClass("invisible");
 }
 
-function displayFailure(event) {
-  event.preventDefault();
+function displayFailure() {
+  //event.preventDefault();
   $("#danger").removeClass("invisible");
   //oPerson.beesToGive=10;
 }
 
-function makeInvisible(event) {
-  event.preventDefault();
+function makeInvisible() {
+  //event.preventDefault();
   $("#danger").addClass("invisible");
   $("#success").addClass("invisible");
 
