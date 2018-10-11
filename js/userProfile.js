@@ -78,6 +78,7 @@ function getBees(){
               displayFailure(event);
           }
       });
+    $("#totalBeesReceived").append((Object.keys(recognitionArray).length)*3);  
 }
 
 function displaySuccess(event) {
