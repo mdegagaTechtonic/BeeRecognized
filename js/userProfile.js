@@ -5,10 +5,11 @@ $(document).ready(function(init){
   displayUserInfo();
   // getUserNames();
   // updateBeesToGive();
-  getBees();
+  // getBees();
   // createRecognition();
   getRecentRecognition(recognitionArray);
   // displayList();
+  // updateForm();
 });
 
 function Recognition(avatar, sender, receiver, beesToGive, date, message)
@@ -75,11 +76,10 @@ function getBees(){
               oPerson.beesToGive=value;
               displaySuccess(event);
           }else{
-              //alert("Please, you need to ");
               displayFailure(event);
           }
       });
-    $("#totalBeesReceived").append((Object.keys(recognitionArray).length)*3);  
+    $("#totalBeesReceived").append((Object.keys(recognitionArray).length)*3);
 }
 
 function displaySuccess(event) {
