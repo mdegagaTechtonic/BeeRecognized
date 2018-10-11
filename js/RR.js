@@ -4,8 +4,8 @@ $(document).ready(function(init){
   // defaultLoginPage();
   // getName();
   getAllRecognitionReceived();
-  displayList();
-  updateBeesReceived()
+  // displayList();
+  updateBeesReceived();
   // logout();
 });
 
