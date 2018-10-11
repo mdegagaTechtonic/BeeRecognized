@@ -67,14 +67,21 @@ function getTotalBeesReceived(){
 }
 
 //call within the click submit button event
+$("form").submit(function(event) {
+  getBees();
+  updateForm();
+  var msgArr = ($(this).serializeArray());
+  updateDB(msgArr);
+  $(this).find("input[type=text],textarea").val("");
+  event.preventDefault();
+});
 
-function getBees(event){
-      // $("#submit-button").on("click", function(event){
-        //makeInvisible(event);
+
+function getBees(){
         if(oPerson.beesToGive>0){
               var value  = oPerson.beesToGive-1;
               $("#beesToGive").html(value);
-              event.preventDefault();
+              // event.preventDefault();
               oPerson.beesToGive=value;
               localStorage.setItem("currUser",JSON.stringify(oPerson))
               displaySuccess(event);
