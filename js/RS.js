@@ -1,21 +1,12 @@
-$('document').ready(function(init){
+$(document).ready(function(init){
   // defaultUserProfilePage();
   // defaultLoadPageRR();
   // defaultLoginPage();
-  getUserNames();
-  getDateRange();
-  getAllRecognitionSent();
+  // getUserNames();
+  // getDateRange();
+  getAllRecognitionSent(recognitionSent);
   displayList(arr);
 });
-
-$("#filter").on("click", function(event) {
-  filter(event, arr);
-});
-
-function filter(event, arr) {
-  event.preventDefault();
-
-}
 
 function Recognition(avatar, sender, receiver, beesToGive, date, message)
 {
@@ -26,6 +17,15 @@ function Recognition(avatar, sender, receiver, beesToGive, date, message)
   this.date = date;
   this.message = message;
 };
+
+$("#filter").on("click", function(event) {
+  filter(event, arr);
+});
+
+function filter(event, arr) {
+  event.preventDefault();
+
+}
 
 recognition1 = new Recognition("demoUser3.png", "Jason D", "Egor Y", 9, "2 months ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")
 recognition2 = new Recognition("demoUser3.png", "Jason D", "Egor Y", 9, "2 months ago", "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.")

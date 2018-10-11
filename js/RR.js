@@ -3,7 +3,7 @@ $(document).ready(function(init){
   // defaultLoadPageRS();
   // defaultLoginPage();
   getAllRecognitionReceived(recognitionReceived);
-  // displayList();
+  displayList();
   // logout();
 });
 
