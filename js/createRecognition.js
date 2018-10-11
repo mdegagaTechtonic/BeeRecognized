@@ -1,13 +1,14 @@
 $("form").submit(function(event) {
-  getBees();
+  getBees(event);
   updateForm();
   var msgArr = ($(this).serializeArray());
   updateDB(msgArr);
   $(this).find("input[type=text],textarea").val("");
-  event.preventDefault();
+  //event.preventDefault();
 });
 
 function updateForm() {
+  //console.log(oPerson.beesToGive);
   $("input[name=beesToGive]").val(oPerson.beesToGive);
 }
 
