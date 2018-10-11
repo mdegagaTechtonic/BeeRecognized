@@ -1,20 +1,15 @@
 $("form").submit(function(event) {
+  getBees(event);
+  updateForm();
   var msgArr = ($(this).serializeArray());
-  event.preventDefault();
-  $.each(msgArr,function(i,value) {
-    // alert(value.value);
-  });
-  $(this).find("input[type=text],textarea").val("");
-  updateBeesToGive();
   updateDB(msgArr);
+  $(this).find("input[type=text],textarea").val("");
+  //event.preventDefault();
 });
 
-function updateBeesToGive() {
-  //get existing bees to give
-  var beesToGive = 5;
-  var updatedBeesToGive = 5-1;
-  //put updated bees to give
-  // console.log(updatedBeesToGive);
+function updateForm() {
+  //console.log(oPerson.beesToGive);
+  $("input[name=beesToGive]").val(oPerson.beesToGive);
 }
 
 function updateDB(msgArr) {
@@ -23,6 +18,7 @@ function updateDB(msgArr) {
 
 function setLocalStorage(msgArr) {
   var stringifiedArr = JSON.stringify(msgArr);
+  console.log(stringifiedArr);
   localStorage.setItem('msgArr',stringifiedArr);
 }
 

@@ -5,10 +5,11 @@ $(document).ready(function(init){
   displayUserInfo();
   // getUserNames();
   // updateBeesToGive();
-  getBees();
+  // getBees();
   // createRecognition();
   getRecentRecognition(recognitionArray);
   // displayList();
+  // updateForm();
 });
 
 function Recognition(avatar, sender, receiver, beesToGive, date, message)
@@ -55,29 +56,32 @@ var oPerson = JSON.parse(localStorage.getItem("currUser"));
 function displayUserInfo() {
   $("#username").html(oPerson.sender);
   $("#beesToGive").html(oPerson.beesToGive);
+  $("#avatar").attr("src", oPerson.avatar);
+  getTotalBeesReceived();
 }
 
 //called within submit button event
-function displayBees(arr){
+function getTotalBeesReceived(){
+  $("#totalBeesReceived").append((Object.keys(recognitionArray).length)*3);
 
 }
 
 //call within the click submit button event
 
-function getBees(){
-      $("#submit-button").on("click", function(event){
-        makeInvisible(event);
+function getBees(event){
+      // $("#submit-button").on("click", function(event){
+        //makeInvisible(event);
         if(oPerson.beesToGive>0){
               var value  = oPerson.beesToGive-1;
               $("#beesToGive").html(value);
               event.preventDefault();
               oPerson.beesToGive=value;
+              localStorage.setItem("currUser",JSON.stringify(oPerson))
               displaySuccess(event);
           }else{
-              //alert("Please, you need to ");
               displayFailure(event);
           }
-      });
+           setTimeout(function(){ makeInvisible(event); }, 3000)
 }
 
 function displaySuccess(event) {
