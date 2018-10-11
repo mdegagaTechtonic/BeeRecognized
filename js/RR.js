@@ -35,7 +35,7 @@ function getAllRecognitionReceived(){
       receivedRecognition.push(recognition[i]);
     }
   }
-  displayList(receivedRecognition);
+  displayList(receivedRecognition, "RR");
   return receivedRecognition;
 };
 
