@@ -71,18 +71,18 @@ function getBees(event){
 
 function displaySuccess() {
   //event.preventDefault();
-  $("#success").removeClass("invisible");
+  $("#success").removeClass("d-none");
 }
 
 function displayFailure() {
   //event.preventDefault();
-  $("#danger").removeClass("invisible");
+  $("#danger").removeClass("d-none");
   //oPerson.beesToGive=10;
 }
 
 function makeInvisible() {
   //event.preventDefault();
-  $("#danger").addClass("invisible");
-  $("#success").addClass("invisible");
+  $("#danger").addClass("d-none");
+  $("#success").addClass("d-none");
 
 }
