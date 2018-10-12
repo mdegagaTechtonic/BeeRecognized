@@ -98,3 +98,18 @@ h1 {
   background-image: url(http://platform.slack-edge.com/img/sign_in_with_slack.png);
   border-radius: 10px;
 }
+
+.morecontent span {
+	display: none;
+}
+.less {
+	color: #0254EB;
+}
+a:visited {
+	color: #0254EB;
+}
+a.morelink {
+	text-decoration:none;
+	outline: none;
+  color: #0254EB;
+}
