@@ -26,11 +26,12 @@ function getName(event){
 
 function getAllRecognitionSent(){
   // localStorage = localStorage.getItem("db");//mock db call
-  username = getName();
-  sentRecognition = [];
-  for (var i = 0; i < recognition.length; i++) {
-    if (recognition[i].sender.toLowerCase() === username.toLowerCase()) {//when localstorage works replace var recognition with var localstorage
-      sentRecognition.push(recognition[i]);
+  var db = JSON.parse(localStorage.getItem("db"));
+  //username = getName();
+  var sentRecognition = [];
+  for (var i = 0; i < db.length; i++) {
+    if (db[i].sender.toLowerCase() === username.toLowerCase()) {//when localstorage works replace var recognition with var localstorage
+    sentRecognition.push(db[i]);
     }
   }
   displayList(sentRecognition, "RS");
@@ -43,3 +44,6 @@ function updateBeesSent(){
   $(".total").attr("title","Total: " + numberSent);
   $(".total").append(beeCount);
 };
+
+var oPerson = JSON.parse(localStorage.getItem("currUser"));
+$(".username").text(oPerson.sender);

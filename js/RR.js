@@ -34,3 +34,7 @@ function updateBeesReceived(){
   $(".total").attr("title","Total: " + numberReceived);
   $(".total").append(beeCount);
 };
+
+
+var oPerson = JSON.parse(localStorage.getItem("currUser"));
+$(".username").text(oPerson.sender);
