@@ -14,22 +14,24 @@ $(document).ready(function(init){
 
 var recognitionArray = JSON.parse(localStorage.getItem("db"));
 
+var oPerson = JSON.parse(localStorage.getItem("currUser"));
+var currUser = oPerson.sender;
+
 function getRecentRecognition(recognitionArray){
-  var count = 0;
-  for(var i = 0; i < recognitionArray.length; i++){
-    count++;
-  }
-  if (count > 5) {
-    var recentFive = recognitionArray.slice(0,5);
+  var received = [];
+  received = recognitionArray.filter(obj => obj.receiver === currUser);
+  console.log(received);
+
+  if (received.length > 5) {
+    var recentFive = received.slice(0,5);
     displayList(recentFive, "SB");
   }
-  if (count <= 5) {
-    displayList(recognitionArray);
+  if (received.length <= 5) {
+    displayList(received, "SB");
   }
 };
 
 //user information
-var oPerson = JSON.parse(localStorage.getItem("currUser"));
 
 function displayUserInfo() {
   $("#username").html(oPerson.sender);
