@@ -1,5 +1,6 @@
 var arr = JSON.parse(localStorage.getItem("db"));
 function displayList(arr, page) {
+  $(".recognition").html("");
   $.each(arr, function(index, value) {
     var newContent = "<div class='d-flex w-100 justify-content-between'><div class='item'>";
     if (page === "RR" || page === "SB") {
