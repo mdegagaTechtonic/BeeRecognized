@@ -8,9 +8,10 @@ $(document).ready(function(init){
   // filter('RR');
   // logout();
 });
+var oPerson = JSON.parse(localStorage.getItem("currUser"));
 
-function getName(event){
-  var username = $('span.username').text().slice(0, -2);//remove 's from username
+function getName(){
+  var username = oPerson.sender//remove 's from username
   return username;
 };
 
@@ -36,5 +37,4 @@ function updateBeesReceived(){
 };
 
 
-var oPerson = JSON.parse(localStorage.getItem("currUser"));
 $(".username").text(oPerson.sender);
