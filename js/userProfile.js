@@ -21,6 +21,8 @@ function getRecentRecognition(recognitionArray){
   var received = [];
   received = recognitionArray.filter(obj => obj.receiver === currUser);
   console.log(received);
+  getTotalBeesReceived(received)
+
 
   if (received.length > 5) {
     var recentFive = received.slice(0,5);
@@ -37,12 +39,12 @@ function displayUserInfo() {
   $("#username").html(oPerson.sender);
   $("#beesToGive").html(oPerson.beesToGive);
   $("#avatar").attr("src", "images/" + oPerson.avatarSender);
-  getTotalBeesReceived();
+  //getTotalBeesReceived();
 }
 
 //called within submit button event
-function getTotalBeesReceived(){
-  $("#totalBeesReceived").append((Object.keys(recognitionArray).length)*3);
+function getTotalBeesReceived(arr){
+  $("#totalBeesReceived").append(arr.length*1);
 
 }
 
