@@ -70,7 +70,7 @@ function getBees(event, msgArr){
     $("#danger").html("Please input a slack user to send recognition");
     displayFailure();
   }
-  else if(msgArr[1].value === "") {
+  else if(msgArr[1].value.trim() === "") {
     $("#danger").html("Please create a message before submitting");
     displayFailure();
   }
