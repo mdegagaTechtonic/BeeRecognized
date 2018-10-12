@@ -79,7 +79,7 @@ function filterResults( pageFlag, username, beginDate, endDate, recognitionArr )
       //var filteredUserName = filterByName( pageFlag, username, recognitionArr );
       var filteredDateRange = filterByDateRange( beginDate, endDate, recognitionArr );
 
-         if(pageFlag='RR')
+         if(pageFlag=='RR')
            filteredArr = filteredDateRange.filter(function(obj,index) {return obj.sender.toLowerCase() == username.toLowerCase();});
          else
            filteredArr = filteredDateRange.filter(function(obj,index) {return obj.receiver.toLowerCase() == username.toLowerCase();});
