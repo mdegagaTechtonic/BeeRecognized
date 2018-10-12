@@ -53,16 +53,25 @@ $("form").submit(function(event) {
   updateForm();
   var msgArr = ($(this).serializeArray());
   updateDB(msgArr);
-  getBees(event,msgArr[0]);
-  console.log(msgArr);
+  getBees(event,msgArr);
+  console.log(msgArr[1]);
   $(this).find("input[type=text],textarea").val("");
   event.preventDefault();
 });
 
 
-function getBees(event, obj){
-  if(obj.value === oPerson.sender) {
+function getBees(event, msgArr){
+  if(msgArr[0].value === oPerson.sender) {
     $("#danger").html("You can't send yourself recognition");
+    displayFailure();
+  }
+  else if(msgArr[0].value === "") {
+
+    $("#danger").html("Please input a slack user to send recognition");
+    displayFailure();
+  }
+  else if(msgArr[1].value === "") {
+    $("#danger").html("Please create a message before submitting");
     displayFailure();
   }
   else {

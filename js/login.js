@@ -17,14 +17,14 @@ if (typeof(Storage) !== "undefined") {
   //
   //   //authenticate username using slack API - phase 3. for check if they are in the mock slack db
   //   //test with name that is in the sampleUsers
-    var samplePerson = "Jason Dang";
+    // var samplePerson = "Jason Dang";
     //var samplePerson = "Egor Y";
     // var samplePerson = "ashley.elder";
     // var samplePerson = "kyle.brothis";
     // var samplePerson = "erikhoy";
     // var samplePerson = "Shambre SW";
     // var samplePerson = "Brett Goers";
-    // var samplePerson = "MerryD"
+    var samplePerson = "MerryD"
   //   //test with name not in the sampleUsers but has a slack account
   // var samplePerson = "Cake"
   //   //test someone with no slack account
