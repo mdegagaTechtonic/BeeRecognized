@@ -34,7 +34,7 @@ var oPerson = JSON.parse(localStorage.getItem("currUser"));
 function displayUserInfo() {
   $("#username").html(oPerson.sender);
   $("#beesToGive").html(oPerson.beesToGive);
-  $("#avatar").attr("src", oPerson.avatarSender);
+  $("#avatar").attr("src", "images/" + oPerson.avatarSender);
   getTotalBeesReceived();
 }
 

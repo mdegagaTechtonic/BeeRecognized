@@ -17,9 +17,9 @@ if (typeof(Storage) !== "undefined") {
   //
   //   //authenticate username using slack API - phase 3. for check if they are in the mock slack db
   //   //test with name that is in the sampleUsers
-    // var samplePerson = "Jason Dang";
+    var samplePerson = "Jason Dang";
   //   //test with name not in the sampleUsers but has a slack account
-  var samplePerson = "Cake"
+  // var samplePerson = "Cake"
   //   //test someone with no slack account
   //   //var samplePerson = "Pierre L";
   //   //console.log(sampleUsers);
@@ -76,7 +76,7 @@ if (typeof(Storage) !== "undefined") {
 
   function createPersonObj(person){
     return {
-      avatarSender: "images/avatars/MerryD.png",
+      avatarSender: "avatars/MerryD.png",
       avatarReceiver: "",
       sender: person,
       //initilizes the number of bees to give
