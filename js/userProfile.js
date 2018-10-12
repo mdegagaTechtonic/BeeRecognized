@@ -50,16 +50,22 @@ function getTotalBeesReceived(arr){
 
 //call within the click submit button event
 $("form").submit(function(event) {
-  getBees(event);
   updateForm();
   var msgArr = ($(this).serializeArray());
   updateDB(msgArr);
+  getBees(event,msgArr[0]);
+  console.log(msgArr);
   $(this).find("input[type=text],textarea").val("");
   event.preventDefault();
 });
 
 
-function getBees(event){
+function getBees(event, obj){
+  if(obj.value === oPerson.sender) {
+    $("#danger").html("You can't send yourself recognition");
+    displayFailure();
+  }
+  else {
         if(oPerson.beesToGive>0){
               var value  = oPerson.beesToGive-1;
               $("#beesToGive").html(value);
@@ -68,9 +74,11 @@ function getBees(event){
               localStorage.setItem("currUser",JSON.stringify(oPerson))
               displaySuccess();
           }else{
+            $("#danger").html("Oh no, you have no bees left to give! They are on vacation, come back later.");
               displayFailure();
           }
-           setTimeout(function(){ makeInvisible(event); }, 3000)
+      }
+           setTimeout(function(){ makeInvisible(event); }, 3000);
 }
 
 function displaySuccess() {
