@@ -11,21 +11,19 @@ $(document).ready(function(init){
 var oPerson = JSON.parse(localStorage.getItem("currUser"));
 
 function getName(){
-  var username = oPerson.sender//remove 's from username
+  var username = oPerson.sender
   return username;
 };
 
 function getAllRecognitionReceived(){
   var db = JSON.parse(localStorage.getItem("db"));//mock db call
-  username = getName();
-  //console.log(db)
+  var username = getName();
   var receivedRecognition = [];
   for (var i = 0; i < db.length; i++) {
     //console.log(db[i].receiver);
     //console.log(i);
-    if (db[i].receiver.toLowerCase() === username.toLowerCase()) {//when localstorage works replace var recognition with var localstorage
+    if (db[i].receiver.toLowerCase() === username.toLowerCase()) {
       receivedRecognition.push(db[i]);
-      //console.log(receivedRecognition);
     }
   }
   displayList(receivedRecognition, "RR");

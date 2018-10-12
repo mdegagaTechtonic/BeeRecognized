@@ -26,19 +26,16 @@ function getName(){
 };
 
 function getAllRecognitionSent(){
-  // localStorage = localStorage.getItem("db");//mock db call
   var db = JSON.parse(localStorage.getItem("db"));
-  username = getName();
-  // console.log(username);
+  var username = getName();
   var sentRecognition = [];
   for (var i = 0; i < db.length; i++) {
     // console.log(i);
     // console.log(db[i].sender);
-    if (db[i].sender.toLowerCase() === username.toLowerCase()) {//when localstorage works replace var recognition with var localstorage
+    if (db[i].sender.toLowerCase() === username.toLowerCase()) {
     sentRecognition.push(db[i]);
     }
   }
-  // console.log(sentRecognition)
   displayList(sentRecognition, "RS");
   return sentRecognition;
 };
