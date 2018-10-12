@@ -7,7 +7,7 @@ $(document).ready(function(init){
   getAllRecognitionSent();
   updateBeesSent();
   // displayList(arr);
-  // filter('RS');
+  filter('RS');
 });
 
 // $("#filter").on("click", function(event) {
