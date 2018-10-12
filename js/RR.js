@@ -5,6 +5,7 @@ $(document).ready(function(init){
   getAllRecognitionReceived();
   // displayList();
   updateBeesReceived();
+  filter('RR');
   // logout();
 });
 
