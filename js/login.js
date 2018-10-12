@@ -1,7 +1,7 @@
 //will use web storage to store for a session - until tab is closed
 if (typeof(Storage) !== "undefined") {
   //testsample slack databse --- these indviduals have a slack account and are in our company but have yet to use the BeeRecognized app
-  var sampleSlackUsers = [{username:"Merry D", avatar:"images/avatars/MerryD.png"}, {username:"Shambre SW", avatar:"images/avatars/ShambreSW.png"}, {username:"Kyle B", avatar:"images/avatars/kyle.brothis.png"}, {username:"Brett G", avatar:"images/avatars/BrettGoers.png"}, {username:"Jason Dang", avatar:"images/avatars/JasonDang.png"},{username:"Ashley E", avatar:"images/avatars/ashley.elder.png"},{username:"Erik H", avatar:"images/avatars/erikhoy.png.png"},{username:"Yahor N", avatar:"images/avatars/Egor.png.png"}, {username:"Cake", avatar:"MerryD.png"}];
+  var sampleSlackUsers = [{username:"MerryD", avatar:"images/avatars/MerryD.png"}, {username:"Shambre SW", avatar:"images/avatars/ShambreSW.png"}, {username:"kyle.brothis", avatar:"images/avatars/kyle.brothis.png"}, {username:"Brett Goers", avatar:"images/avatars/BrettGoers.png"}, {username:"Jason Dang", avatar:"images/avatars/JasonDang.png"},{username:"ashley.elder", avatar:"images/avatars/ashley.elder.png"},{username:"erikhoy", avatar:"images/avatars/erikhoy.png.png"},{username:"Egor Y", avatar:"images/avatars/Egor.png.png"}, {username:"Cake", avatar:"MerryD.png"}];
 
   //test data until we can connect to our own db
   //contains Recognition objects
@@ -18,6 +18,13 @@ if (typeof(Storage) !== "undefined") {
   //   //authenticate username using slack API - phase 3. for check if they are in the mock slack db
   //   //test with name that is in the sampleUsers
     var samplePerson = "Jason Dang";
+    //var samplePerson = "Egor Y";
+    // var samplePerson = "ashley.elder";
+    // var samplePerson = "kyle.brothis";
+    // var samplePerson = "erikhoy";
+    // var samplePerson = "Shambre SW";
+    // var samplePerson = "Brett Goers";
+    // var samplePerson = "MerryD"
   //   //test with name not in the sampleUsers but has a slack account
   // var samplePerson = "Cake"
   //   //test someone with no slack account

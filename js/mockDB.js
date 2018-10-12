@@ -53,9 +53,12 @@ r21 = new Recognition("avatars/Egor.png", "avatars/BrettGoers.png", "Egor", "Bre
 
 r22 = new Recognition("avatars/MerryD.png", "avatars/ashley.elder.png", "MerryD", "ashley.elder", 3, "10/01/2017", "Remember there’s no such thing as a small act of kindness. Every act creates a ripple with no logical end.")
 
+r23 = new Recognition("avatars/ashley.elder.png", "avatars/MerryD.png", "ashley.elder", "MerryD", 2, "6/11/2018", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+
+
 
 $(init)
 function init() {
-  recognition = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22];
+  recognition = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23];
   localStorage.setItem("db", JSON.stringify(recognition));
 }
