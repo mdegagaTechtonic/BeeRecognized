@@ -12,7 +12,10 @@ function getUserNames () {
 
   //BEGIN unit test assuming got usernames from Slack
   //DELETE when connected to Slack API
-  usernameArr = ['Jason','Bill','Egor','Ashley','Merry','Erik'];
+  usernameArr = ['Jason Dang','Bill','Egor Y','ashley.elder','MerryD','erikhoy'];
+
+
+
   //END unit test
 
   if(usernameArr.length<=0)
