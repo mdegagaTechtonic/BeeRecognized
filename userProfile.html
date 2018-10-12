@@ -58,14 +58,8 @@
             <form action="" method="" autocomplete="off">
               <div class="form-group input-group-lg">
                 <label for="username">Select User to Recognize</label><br>
-                <input type="text" list="usernamelist" class="form-control rounded border border-secondary" placeholder="Username" name="username">
-                  <datalist id="usernamelist">
-                    <option label="ashley.elder" value="ashley.elder" />
-                    <option label="Egor Y" value="Egor Y" />
-                    <option label="erikhoy" value="erikhoy" />
-                    <option label="Jason Dang" value="Jason Dang" />
-                    <option label="MerryD" value="MerryD" />
-                  </datalist>
+                <input type="text" list="browsers" class="form-control rounded border border-secondary" placeholder="Username" name="sender">
+                  <datalist id="browsers"></datalist>
               </div>
               <div class="form-group input-group-lg">
                 <label for="message">Message</label><br>
@@ -106,6 +100,7 @@
     <script src="js/displayList.js" type="text/javascript"></script>
     <script src="js/createRecognition.js"></script>
     <script src="js/mockDB.js"></script>
+    <script src="js/filter.js"></script>
     <script>
       $(function () {
         //$('[data-toggle="tooltip"]').tooltip()

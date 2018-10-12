@@ -3,7 +3,7 @@ $(document).ready(function(init){
   // defaultLoadPageRR();
   // defaultLoginPage();
   displayUserInfo();
-  // getUserNames();
+  getUserNames();
   // updateBeesToGive();
   // getBees();
   // createRecognition();
