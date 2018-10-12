@@ -76,16 +76,21 @@ function filterResults( pageFlag, username, beginDate, endDate, recognitionArr )
       break;
     //filter by both username and date range
     case (username.length>0 && beginDate.length>0):
-      var filteredUserName = filterByName( pageFlag, username, recognitionArr );
+      //var filteredUserName = filterByName( pageFlag, username, recognitionArr );
       var filteredDateRange = filterByDateRange( beginDate, endDate, recognitionArr );
-      if(pageFlag='RS')
-        filteredArr = filteredDateRange.filter(function(obj,index) {return obj.receiver.toLowerCase() == filteredUserName[index].receiver.toLowerCase()});
-      else
-        filteredArr = filteredDateRange.filter(function(obj,index) {return obj.sender.toLowerCase() == filteredUserName[index].sender.toLowerCase()});
+
+         if(pageFlag='RR')
+           filteredArr = filteredDateRange.filter(function(obj,index) {return obj.sender.toLowerCase() == username.toLowerCase();});
+         else
+           filteredArr = filteredDateRange.filter(function(obj,index) {return obj.receiver.toLowerCase() == username.toLowerCase();});
+      // if(pageFlag='RS')
+      //   filteredArr = filteredDateRange.filter(function(obj,index) {return obj.receiver.toLowerCase() == filteredUserName[index].receiver.toLowerCase()});
+      // else
+      //   filteredArr = filteredDateRange.filter(function(obj,index) {return obj.sender.toLowerCase() == filteredUserName[index].sender.toLowerCase()});
       break;
     default: return [];
       break;
-  }
+  };
   return filteredArr;
 };
 
