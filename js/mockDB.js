@@ -53,26 +53,25 @@ r21 = new Recognition("avatars/Egor.png", "avatars/BrettGoers.png", "Egor", "Bre
 
 r22 = new Recognition("avatars/MerryD.png", "avatars/ashley.elder.png", "MerryD", "ashley.elder", 3, "10/01/2017", "Remember there’s no such thing as a small act of kindness. Every act creates a ripple with no logical end.")
 
-r23 = new Recognition("avatars/MerryD.png", "avatars/erikhoy.png", "MerryD", "erikhoy", 2, "10/02/2017", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+r23 = new Recognition("avatars/MerryD.png", "avatars/erikhoy.png", "MerryD", "erikhoy", 2, "10/02/2017", "Oh, and remember: next Friday... is Hawaiian shirt day. So, you know, if you want to, go ahead and wear a Hawaiian shirt and jeans.")
 
-r24 = new Recognition("avatars/MerryD.png", "avatars/ShambreSW.png", "MerryD", "ShambreSW", 2, "06/28/2018", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+r24 = new Recognition("avatars/MerryD.png", "avatars/ShambreSW.png", "MerryD", "ShambreSW", 2, "06/28/2018", "Yeah........I'm gonna need you to come in on Saturday.")
 
-r25 = new Recognition("avatars/MerryD.png", "avatars/Egor.png", "MerryD", "Egor", 4, "10/12/2018", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+r25 = new Recognition("avatars/MerryD.png", "avatars/Egor.png", "MerryD", "Egor", 4, "10/12/2018", "I believe you have my stapler.")
 
-function sortArrByDate(arr){
-  var arr = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25];
-  arr.sort(function(a, b) {
+function sortDBByDate(recognition){
+  var recognition = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25];
+  recognition.sort(function(a, b) {
     return new Date(a.date) - new Date(b.date)
   })
-  arr.sort(function(a, b) {
+  recognition.sort(function(a, b) {
     return new Date(b.date) - new Date(a.date);
   })
-  console.log(arr);
-  return arr;
+  return recognition;
 };
 
 $(init)
 function init() {
-  var recognition = sortArrByDate();
+  var recognition = sortDBByDate();
   localStorage.setItem("db", JSON.stringify(recognition));
 }
